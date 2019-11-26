@@ -3,6 +3,9 @@
     const urlParams = new URLSearchParams(window.location.search);
     const app = urlParams.get('app');
     const id = urlParams.get('id');
+    setTimeout(function() {
+      window.location.href = `https://play.google.com/store/apps/details?id=com.guillaumebadi.${app}`;
+    }, 25);
     window.location.href = `${app}://?id=${id}`;
   </script>
 </html>
