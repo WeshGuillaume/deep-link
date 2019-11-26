@@ -1,0 +1,8 @@
+<html>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const app = urlParams.get('app');
+    const id = urlParams.get('id');
+    window.location.href = `${app}://?id=${id}`;
+  </script>
+</html>
