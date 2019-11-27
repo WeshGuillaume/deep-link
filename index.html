@@ -11,14 +11,52 @@
       content="https://images.unsplash.com/photo-1544639044-4f142ceb6a2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
     />
     <meta property="og:description" content="You received a snap card !" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-weight: 700;
+        text-align: center;
+        color: white;
+        max-width: 90vw;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #3d4163;
+      }
+      h1 {
+        margin-bottom: 32px;
+        font-family: 'Muli', sans-serif;
+      }
+      p {
+        margin-bottom: 32px;
+        max-width: 200px;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Muli', sans-serif;
+      }
+    </style>
   </head>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const app = urlParams.get('app');
-    const id = urlParams.get('id');
-    setTimeout(function() {
-      window.location.href = `https://play.google.com/store/apps/details?id=com.guillaumebadi.${app}`;
-    }, 500);
-    window.location.href = `${app}://?id=${id}`;
-  </script>
+  <body>
+    <h1>You received a new Snap Card!</h1>
+    <p>Download the app to see what it contains !</p>
+    <a
+      href="https://play.google.com/store/apps/details?id=com.guillaumebadi.snapcard&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+      ><img
+        alt="Get it on Google Play"
+        src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+    /></a>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const app = urlParams.get('app');
+      const id = urlParams.get('id');
+      window.location.href = `${app}://?id=${id}`;
+    </script>
+  </body>
 </html>
