@@ -14,6 +14,7 @@
     <style>
       * {
         margin: 0;
+        text-decoration: none;
         padding: 0;
         box-sizing: border-box;
         font-weight: 700;
@@ -21,11 +22,11 @@
         color: white;
         max-width: 90vw;
       }
-      body {
+      body,
+      html {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100vw;
         height: 100vh;
         flex-direction: column;
         background-color: #3d4163;
@@ -36,10 +37,19 @@
       }
       p {
         margin-bottom: 32px;
-        max-width: 200px;
+        max-width: 300px;
         font-size: 16px;
         line-height: 24px;
         font-family: 'Muli', sans-serif;
+      }
+
+      #done {
+        padding: 16px 32px;
+        font-family: 'Muli', sans-serif;
+        font-size: 18px;
+        color: white;
+        background-color: #f45656;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -47,16 +57,21 @@
     <h1>You received a new Snap Card!</h1>
     <p>Download the app to see what it contains !</p>
     <a
+      style="margin-bottom: 32px"
       href="https://play.google.com/store/apps/details?id=com.guillaumebadi.snapcard&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
       ><img
         alt="Get it on Google Play"
         src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
     /></a>
+    <p>
+      If you already have the app installed, add the card to your Snap Card list
+    </p>
+    <a id="done" href="#">I already have the app installed</a>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const app = urlParams.get('app');
       const id = urlParams.get('id');
-      window.location.href = `${app}://?id=${id}`;
+      document.getElementById('done').href = `${app}://?id=${id}`;
     </script>
   </body>
 </html>
