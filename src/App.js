@@ -27,11 +27,11 @@ export default function App() {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const id =
-      urlParams.get('id') ||
-      'eyJjb2xvciI6MiwidGl0bGUiOiJIb21lbWFkZSB0YWNvcyAyIiwiYXV0aG9yIjoiR3VpbGxhdW1lIiwiZGF0ZSI6IlRvZGF5IGF0IDI6NTcgUE0ifQ';
-    setLink(`snapcard://?id=${id}`);
-    setData(JSON.parse(atob(id)));
+    const id = urlParams.get('id');
+    if (!id) {
+      setLink(`snapcard://?id=${id}`);
+      setData(JSON.parse(atob(id)));
+    }
   }, []);
 
   return (

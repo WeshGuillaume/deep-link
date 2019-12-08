@@ -14,12 +14,13 @@ const Container = styled.div`
   right: 0;
 `;
 
-const Button = styled.div`
+const Button = styled.a`
   border-radius: 5px;
   background-color: #703deb;
   padding: 16px 32px;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 
   span {
     color: white;
@@ -50,10 +51,10 @@ const Img = styled.img`
   align-self: center;
 `;
 
-export default function Footer({ onAdd }) {
+export default function Footer({ href }) {
   return (
     <Container>
-      <Button onClick={onAdd}>
+      <Button href={href}>
         <span>Add to SnapCard</span>
       </Button>
       <Separator>or</Separator>

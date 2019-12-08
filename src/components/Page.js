@@ -9,4 +9,5 @@ export default styled.div`
   padding: 64px 32px;
   overflow-x: hidden;
   overflow-y: scroll;
+  padding-bottom: 200px;
 `;
