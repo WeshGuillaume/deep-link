@@ -31,7 +31,7 @@ const Info = styled.span`
 export default function Card({ title, author, date, color }) {
   return (
     <Container color={color}>
-      <Info>From {author}</Info>
+      <Info>{author}</Info>
       <Title>{title}</Title>
       <Info>{date}</Info>
     </Container>
