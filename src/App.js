@@ -28,7 +28,7 @@ export default function App() {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    if (!id) {
+    if (id) {
       setLink(`snapcard://?id=${id}`);
       setData(JSON.parse(atob(id)));
     }
